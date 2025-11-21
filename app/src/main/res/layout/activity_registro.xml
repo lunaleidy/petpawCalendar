@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F8F5"
+    tools:context=".RegistroActivity">
+
+    <!-- “App bar” personalizada -->
+    <LinearLayout
+        android:id="@+id/topBarRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_form_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Botón atrás -->
+        <LinearLayout
+            android:id="@+id/btnAtrasRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_input_field"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="9dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/icono_atras"
+                android:src="@android:drawable/ic_media_previous"
+                app:tint="#555555" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/atras_btn"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Título centrado -->
+        <TextView
+            android:id="@+id/txtTituloRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/registro_titulo"
+            android:textColor="#48C9B0"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Contenedor con scroll para todo el formulario -->
+    <ScrollView
+        android:id="@+id/scrollRegistro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarRegistro">
+
+        <!-- Contenedor del formulario -->
+        <LinearLayout
+            android:id="@+id/formCardRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scrollRegistro">
+
+            <!-- Títulos -->
+            <TextView
+                android:id="@+id/txtSubtituloRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:gravity="center"
+                android:text="@string/registro_subtitulo"
+                android:textColor="#E67E22"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtDescripcionRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/nunitoregular"
+                android:gravity="center"
+                android:text="@string/registro_descripcion"
+                android:textColor="#7F8C8D"
+                android:textSize="15sp" />
+
+            <!-- Nombre de usuario -->
+            <TextView
+                android:id="@+id/lblNombreUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/registro_nombre_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/icono_usuario"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    app:tint="#B0B0B0" />
+
+                <EditText
+                    android:id="@+id/edtNombreUsuario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:autofillHints="name"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/nunitoregular"
+                    android:hint="@string/registro_nombre_hint"
+                    android:inputType="textPersonName"
+                    android:maxWidth="320dp"
+                    android:padding="5dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#B0B0B0"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/lblEmailRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/email_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/icono_email"
+                    android:src="@android:drawable/ic_dialog_email"
+                    app:tint="#B0B0B0" />
+
+                <EditText
+                    android:id="@+id/edtEmailRegistro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:autofillHints="emailAddress"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/nunitoregular"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress"
+                    android:maxWidth="320dp"
+                    android:padding="5dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#B0B0B0"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- Contraseña -->
+            <TextView
+                android:id="@+id/lblPasswordRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/password_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/icono_pass"
+                    android:src="@android:drawable/ic_lock_idle_lock"
+                    app:tint="#B0B0B0" />
+
+                <EditText
+                    android:id="@+id/edtPasswordRegistro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:autofillHints="password"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/nunitoregular"
+                    android:hint="@string/registro_password_hint"
+                    android:inputType="textPassword"
+                    android:maxWidth="320dp"
+                    android:padding="5dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#B0B0B0"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/imgTogglePasswordRegistro"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/registro_icono_verpass"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="#B0B0B0" />
+            </LinearLayout>
+
+            <!-- Confirmar contraseña -->
+            <TextView
+                android:id="@+id/lblPasswordConfirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/registro_password_confirm_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/registro_icono_pass_confirm"
+                    android:src="@android:drawable/ic_lock_idle_lock"
+                    app:tint="#B0B0B0" />
+
+                <EditText
+                    android:id="@+id/edtPasswordConfirmar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:autofillHints="password"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/nunitoregular"
+                    android:hint="@string/registro_password_confirm_hint"
+                    android:inputType="textPassword"
+                    android:maxWidth="320dp"
+                    android:padding="5dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#B0B0B0"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/imgTogglePasswordConfirmar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/registro_icono_verpass_confirm"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="#B0B0B0" />
+            </LinearLayout>
+
+            <!-- Acepto términos y política -->
+            <LinearLayout
+                android:id="@+id/layoutTerminos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/chkTerminos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#48C9B0"
+                    android:contentDescription="@string/registro_checkbox_terminos"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/txtTerminos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunitoregular"
+                    android:text="@string/registro_terminos_frase"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Botón Crear cuenta -->
+            <Button
+                android:id="@+id/btnCrearCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_btn_primary"
+                android:fontFamily="@font/poppinssemibold"
+                android:paddingVertical="12dp"
+                android:stateListAnimator="@null"
+                android:text="@string/registro_btn_crear"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:backgroundTint="@null" />
+
+            <!-- ¿Ya tienes cuenta? Iniciar Sesión -->
+            <LinearLayout
+                android:id="@+id/layoutLoginRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtYaCuenta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitoregular"
+                    android:text="@string/registro_ya_cuenta"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/txtIrLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/registro_ir_login"
+                    android:textColor="#48C9B0"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

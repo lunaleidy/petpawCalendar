@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra un poco más marcada -->
+    <item>
+        <shape>
+            <corners android:radius="999dp" />
+            <solid android:color="#26000000" />
+        </shape>
+    </item>
+
+    <!-- Botón hundido: fondo blanco con un toque verdoso -->
+    <item
+        android:bottom="2dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="2dp">
+
+        <shape>
+            <corners android:radius="999dp" />
+            <!-- blanco ligeramente teñido -->
+            <solid android:color="#F0FFFB" />
+            <stroke
+                android:width="2dp"
+                android:color="#48C9B0" />
+            <padding
+                android:bottom="8dp"
+                android:left="8dp"
+                android:right="8dp"
+                android:top="8dp" />
+            <size android:height="52dp" />
+        </shape>
+    </item>
+</layer-list>

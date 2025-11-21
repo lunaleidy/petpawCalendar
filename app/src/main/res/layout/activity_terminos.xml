@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F8F5"
+    tools:context=".TerminosActivity">
+
+    <!-- “App bar” personalizada -->
+    <LinearLayout
+        android:id="@+id/topBarTerminos"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_form_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Botón atrás -->
+        <LinearLayout
+            android:id="@+id/btnAtrasTerminos"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_input_field"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="9dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/icono_atras"
+                android:src="@android:drawable/ic_media_previous"
+                app:tint="#555555" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/atras_btn"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Título centrado -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/terminos_titulo"
+            android:textColor="#48C9B0"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_weight="1" />
+    </LinearLayout>
+
+    <!-- Contenido con scroll -->
+    <ScrollView
+        android:id="@+id/scrollTerminos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarTerminos">
+
+        <LinearLayout
+            android:id="@+id/contentTerminos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Título grande dentro de la tarjeta -->
+            <TextView
+                android:id="@+id/txtTerminosTituloCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_titulo"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+            <!-- Última actualización -->
+            <TextView
+                android:id="@+id/txtTerminosLastUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitoregular"
+                android:text="@string/terminos_last_update"
+                android:textColor="#7F8C8D"
+                android:textSize="11sp" />
+
+            <!-- Espacio -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp" />
+
+            <!-- Sección 1 -->
+            <TextView
+                android:id="@+id/txtTerminos1Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_1_titulo"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTerminos1Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/nunitoregular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/terminos_1_texto"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <!-- Sección 2 -->
+            <TextView
+                android:id="@+id/txtTerminos2Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_2_titulo"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTerminos2Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/nunitoregular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/terminos_2_texto"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <!-- Sección 3 -->
+            <TextView
+                android:id="@+id/txtTerminos3Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_3_titulo"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTerminos3Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/nunitoregular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/terminos_3_texto"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <!-- Sección 4 -->
+            <TextView
+                android:id="@+id/txtTerminos4Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_4_titulo"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTerminos4Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/nunitoregular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/terminos_4_texto"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <!-- Sección 5 -->
+            <TextView
+                android:id="@+id/txtTerminos5Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_5_titulo"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTerminos5Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/nunitoregular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/terminos_5_texto"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <!-- Sección 6 -->
+            <TextView
+                android:id="@+id/txtTerminos6Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/terminos_6_titulo"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTerminos6Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/nunitoregular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/terminos_6_texto"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

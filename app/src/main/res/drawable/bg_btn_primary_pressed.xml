@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra un poco más fuerte y más “pegada” al botón -->
+    <item>
+        <shape>
+            <corners android:radius="999dp" />
+            <!-- más opaco que el normal -->
+            <solid android:color="#3D000000" />
+        </shape>
+    </item>
+
+    <!-- Botón hundido (ligeramente más oscuro y más abajo) -->
+    <item
+        android:bottom="2dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="2dp">
+
+        <shape>
+            <corners android:radius="999dp" />
+            <!-- verde un pelín más oscuro -->
+            <solid android:color="#3CB09A" />
+            <padding
+                android:bottom="8dp"
+                android:left="8dp"
+                android:right="8dp"
+                android:top="8dp" />
+            <size android:height="52dp" />
+        </shape>
+    </item>
+</layer-list>

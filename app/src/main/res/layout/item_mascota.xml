@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="10dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Foto / avatar circular -->
+        <ImageView
+            android:id="@+id/imgMascota"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/bg_mascota_circle"
+            android:contentDescription="@string/icono_mascota"
+            android:padding="6dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Chip especie -->
+        <TextView
+            android:id="@+id/txtEspecieChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:fontFamily="@font/poppinsmedium"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="4dp"
+            android:text="@string/item_mascota_especie_demo"
+            android:textColor="#555555"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/txtNombreMascota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="@string/item_mascota_nombre_demo"
+            android:textColor="#E67E22"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/txtEspecieChip"
+            app:layout_constraintStart_toEndOf="@id/imgMascota"
+            app:layout_constraintTop_toTopOf="@id/imgMascota" />
+
+        <!-- Raza -->
+        <TextView
+            android:id="@+id/txtRazaMascota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/nunitoregular"
+            android:text="@string/item_mascota_raza_demo"
+            android:textColor="#555555"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/txtEspecieChip"
+            app:layout_constraintStart_toStartOf="@id/txtNombreMascota"
+            app:layout_constraintTop_toBottomOf="@id/txtNombreMascota" />
+
+        <!-- Fila Fecha nacimiento -->
+        <LinearLayout
+            android:id="@+id/rowFecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txtNombreMascota"
+            app:layout_constraintTop_toBottomOf="@id/txtRazaMascota">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_day"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/txtFechaNacimientoMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/nunitoregular"
+                android:text="@string/item_mascota_fecha_demo"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Fila Peso -->
+        <LinearLayout
+            android:id="@+id/rowPeso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/btnEliminarMascota"
+            app:layout_constraintStart_toStartOf="@id/txtNombreMascota"
+            app:layout_constraintTop_toBottomOf="@id/rowFecha">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/txtPesoMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/nunitoregular"
+                android:text="@string/item_mascota_peso_demo"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Botón eliminar (icono papelera) -->
+        <ImageView
+            android:id="@+id/btnEliminarMascota"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="@string/eliminar"
+            android:src="@android:drawable/ic_menu_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="#ff4444" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

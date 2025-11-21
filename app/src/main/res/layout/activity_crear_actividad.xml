@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F8F5"
+    tools:context=".CrearActividadActivity">
+
+    <!-- TopBar tipo RegistroActivity -->
+    <LinearLayout
+        android:id="@+id/topBarCrearActividad"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_form_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Botón atrás -->
+        <LinearLayout
+            android:id="@+id/btnAtrasCrearActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_input_field"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="9dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/icono_atras"
+                android:src="@android:drawable/ic_media_previous"
+                app:tint="#555555" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/atras_btn"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Título centrado -->
+        <TextView
+            android:id="@+id/txtTituloCrearActividad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/crear_act_titulo"
+            android:textColor="#48C9B0"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Scroll general -->
+    <ScrollView
+        android:id="@+id/scrollCrearActividad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarCrearActividad">
+
+        <LinearLayout
+            android:id="@+id/formCardCrearActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <!-- Mascota -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/crear_act_mascota_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spMascotaActividad"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_form_card"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:spinnerMode="dropdown" />
+
+            <!-- Tipo evento -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/crear_act_tipo_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spTipoActividad"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_form_card"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:spinnerMode="dropdown" />
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/crear_act_titulo_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edtTituloActividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                android:background="@drawable/bg_input_field"
+                android:fontFamily="@font/nunitoregular"
+                android:hint="@string/crear_act_titulo_hint"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:textColor="#333333"
+                android:textColorHint="#B0B0B0"
+                android:textSize="15sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <!-- Fecha y hora -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Fecha -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:text="@string/crear_act_fecha_label"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_field"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="10dp">
+
+                        <TextView
+                            android:id="@+id/txtFechaSeleccionada"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nunitoregular"
+                            android:text="@string/crear_act_fecha_hint"
+                            android:textColor="#333333"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/btnPickFecha"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_my_calendar"
+                            app:tint="#B0B0B0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Hora -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:text="@string/crear_act_hora_label"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_field"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="10dp">
+
+                        <TextView
+                            android:id="@+id/txtHoraSeleccionada"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nunitoregular"
+                            android:text="@string/crear_act_hora_hint"
+                            android:textColor="#333333"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/btnPickHora"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            app:tint="#B0B0B0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Notas (un poco más baja) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/crear_act_notas_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edtNotasActividad"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                android:background="@drawable/bg_input_field"
+                android:fontFamily="@font/nunitoregular"
+                android:gravity="top|start"
+                android:hint="@string/crear_act_notas_hint"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:textColor="#333333"
+                android:textColorHint="#B0B0B0"
+                android:textSize="15sp" />
+
+            <!-- Programar -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/crear_act_programar_label"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/rgProgramar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbUnaVez"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:fontFamily="@font/nunitoregular"
+                    android:text="@string/crear_act_unavez"
+                    android:textColor="#333333" />
+
+                <RadioButton
+                    android:id="@+id/rbRepetir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/nunitoregular"
+                    android:text="@string/crear_act_repetir"
+                    android:textColor="#333333" />
+            </RadioGroup>
+
+            <!-- Frecuencia (se muestra solo si Repetir) -->
+            <LinearLayout
+                android:id="@+id/layoutFrecuencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/crear_act_frecuencia_label"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/spFrecuenciaNumero"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_form_card"
+                    android:paddingHorizontal="8dp" />
+
+                <Spinner
+                    android:id="@+id/spFrecuenciaUnidad"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_form_card"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+            <!-- Botones inferior (mismo estilo que inicio/registro) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnCancelarActividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_secondary"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:paddingVertical="1dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/crear_act_btn_cancelar"
+                    android:textAllCaps="false"
+                    android:textColor="#48C9B0"
+                    android:textSize="18sp"
+                    app:backgroundTint="@null"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/btnGuardarActividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:paddingVertical="1dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/crear_act_btn_guardar"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:backgroundTint="@null"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

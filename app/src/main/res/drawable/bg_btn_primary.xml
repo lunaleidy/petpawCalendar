@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Cuando está pulsado -->
+    <item android:drawable="@drawable/bg_btn_primary_pressed" android:state_pressed="true" />
+
+    <!-- Estado por defecto -->
+    <item android:drawable="@drawable/bg_btn_primary_normal" />
+
+</selector>

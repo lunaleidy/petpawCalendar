@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F8F5"
+    tools:context=".AjustesActivity">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:id="@+id/topBarMenu"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_form_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Avatar + nombre -->
+        <LinearLayout
+            android:id="@+id/layoutPerfilUsuario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAvatarUsuario"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_avatar_circle"
+                android:contentDescription="@string/icono_usuario"
+                android:padding="4dp"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_myplaces" />
+
+            <TextView
+                android:id="@+id/txtNombreUsuarioMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/menu_usuario_nombre"
+                android:textColor="#48C9B0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Botón Nueva Mascota -->
+        <LinearLayout
+            android:id="@+id/btnNuevaMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_btn_primary"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="6dp"
+            tools:ignore="TouchTargetSizeCheck">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="@string/menu_btn_nueva_mascota"
+                android:src="@android:drawable/ic_input_add"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/txtLabelNuevaMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/menu_btn_nueva_mascota"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botonera -->
+    <LinearLayout
+        android:id="@+id/bottomTabsMenu"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/bg_form_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarMenu">
+
+        <LinearLayout
+            android:id="@+id/tabInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_view"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/txtTabInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/menu_tab_inicio"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabCalendario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_month"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/txtTabCalendario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/menu_tab_calendario"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabAjustes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_manage"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/txtTabAjustes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/menu_tab_ajustes"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Contenido de Ajustes -->
+    <ScrollView
+        android:id="@+id/scrollAjustes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomTabsMenu">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/cardAjustes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_form_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtTituloAjustes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:gravity="center"
+                    android:text="@string/ajustes_titulo"
+                    android:textColor="#E67E22"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtDescripcionAjustes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunitoregular"
+                    android:gravity="center"
+                    android:text="@string/ajustes_descripcion"
+                    android:textColor="#7F8C8D"
+                    android:textSize="15sp" />
+
+                <!-- Botón Eliminar cuenta -->
+                <Button
+                    android:id="@+id/btnEliminarCuenta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_btn_secondary"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:paddingVertical="12dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/ajustes_btn_eliminar_cuenta"
+                    android:textAllCaps="false"
+                    android:textColor="#E74C3C"
+                    android:textSize="18sp"
+                    app:backgroundTint="@null" />
+
+                <!-- Botón Salir de la app -->
+                <Button
+                    android:id="@+id/btnSalirApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:paddingVertical="12dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/ajustes_btn_salir"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

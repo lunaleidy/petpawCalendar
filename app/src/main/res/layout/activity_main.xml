@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F8F5"
+    tools:context=".MainActivity">
+
+    <!-- Contenedor central -->
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/app_name"
+            android:elevation="24dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logopetpaw"
+            android:translationZ="4dp" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTituloPetPaw"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="@string/titulo_app"
+            android:textColor="#48C9B0"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:id="@+id/txtSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="@string/subtitulo_app"
+            android:textColor="#E67E22"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <!-- Slogan -->
+        <TextView
+            android:id="@+id/txtSlogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/nunitoregular"
+            android:gravity="center"
+            android:paddingHorizontal="24dp"
+            android:text="@string/slogan_app"
+            android:textColor="#7F8C8D"
+            android:textSize="16sp" />
+
+        <!-- Botón iniciar sesión -->
+        <Button
+            android:id="@+id/btnIniciarSesion"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_btn_primary"
+            android:fontFamily="@font/poppinssemibold"
+            android:maxWidth="320dp"
+            android:paddingVertical="12dp"
+            android:stateListAnimator="@null"
+            android:text="@string/login_btn"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:backgroundTint="@null" />
+
+        <!-- Botón registrarse -->
+        <Button
+            android:id="@+id/btnRegistrarse"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_btn_secondary"
+            android:fontFamily="@font/poppinssemibold"
+            android:maxWidth="320dp"
+            android:paddingVertical="12dp"
+            android:stateListAnimator="@null"
+            android:text="@string/registro_btn"
+            android:textAllCaps="false"
+            android:textColor="#48C9B0"
+            android:textSize="20sp"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

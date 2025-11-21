@@ -59,7 +59,7 @@ public class ResetSolicitarActivity extends AppCompatActivity {
             edtEmailReset.setText(emailPrefill);
         }
 
-        // Botón atrás: volver al Login (o a donde vengas)
+        // Botón atrás
         btnAtrasReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

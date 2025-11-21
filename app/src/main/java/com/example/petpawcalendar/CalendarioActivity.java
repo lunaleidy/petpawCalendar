@@ -81,9 +81,10 @@ public class CalendarioActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         apiService = ApiClient.getApiService();
 
-        // Referencias UI comunes
+        // Vinculamos los elementos de la interfaz
         txtNombreUsuarioMenu = findViewById(R.id.txtNombreUsuarioMenu);
         imgAvatarUsuario = findViewById(R.id.imgAvatarUsuario);
         btnNuevaMascota = findViewById(R.id.btnNuevaMascota);
@@ -116,7 +117,6 @@ public class CalendarioActivity extends AppCompatActivity {
         });
 
         tabCalendario.setOnClickListener(v -> {
-            // Ya estamos aquí; solo mantenemos el estado visual
             seleccionarTab(TAB_CALENDARIO);
         });
 
@@ -136,7 +136,6 @@ public class CalendarioActivity extends AppCompatActivity {
         cargarMascotasEnSpinner();
         cargarTiposActividad();
 
-        // ====== FECHA SELECCIONADA DEL CALENDARIO ======
         // Por defecto, la fecha actual que marca el CalendarView
         selectedDateMillis = calendarView.getDate();
 
@@ -186,7 +185,6 @@ public class CalendarioActivity extends AppCompatActivity {
         }
     }
 
-    // ===== PERFIL USUARIO =====
     private void cargarPerfilUsuario() {
         SharedPreferences prefs = getSharedPreferences("auth_prefs", MODE_PRIVATE);
         String token = prefs.getString("jwt_token", null);
@@ -240,7 +238,6 @@ public class CalendarioActivity extends AppCompatActivity {
         });
     }
 
-    // ===== SPINNER MASCOTAS =====
     private void cargarMascotasEnSpinner() {
         SharedPreferences prefs = getSharedPreferences("auth_prefs", MODE_PRIVATE);
         String token = prefs.getString("jwt_token", null);
@@ -273,7 +270,6 @@ public class CalendarioActivity extends AppCompatActivity {
 
                         listaMascotas = resp.getData();
 
-                        // Lista de nombres con placeholder en posición 0
                         List<String> nombres = new ArrayList<>();
                         nombres.add(getString(R.string.cal_placeholder_mascota)); // "Mascota:"
                         for (MascotaRequest m : listaMascotas) {
@@ -315,7 +311,6 @@ public class CalendarioActivity extends AppCompatActivity {
                 });
     }
 
-    // ===== SPINNER TIPOS ACTIVIDAD =====
     private void cargarTiposActividad() {
         SharedPreferences prefs = getSharedPreferences("auth_prefs", MODE_PRIVATE);
         String token = prefs.getString("jwt_token", null);
@@ -387,7 +382,7 @@ public class CalendarioActivity extends AppCompatActivity {
                 });
     }
 
-    // ===== NAVEGAR A CREAR ACTIVIDAD =====
+    // Navegar a crear actividad
     private void irACrearActividad() {
         if (listaMascotas == null || listaMascotas.isEmpty()) {
             mostrarToast(getString(R.string.cal_error_sin_mascotas));
@@ -401,7 +396,6 @@ public class CalendarioActivity extends AppCompatActivity {
         int posMascotaSpinner = spMascotas.getSelectedItemPosition();
         int posTipoSpinner = spTiposActividad.getSelectedItemPosition();
 
-        // 0 es el placeholder => obligatorio elegir algo > 0
         if (posMascotaSpinner <= 0) {
             mostrarToast(getString(R.string.cal_error_sel_mascota));
             return;
@@ -431,7 +425,6 @@ public class CalendarioActivity extends AppCompatActivity {
         return sdf.format(new Date(selectedDateMillis));
     }
 
-    // ===== Helpers comunes =====
     private String extraerPrimerNombre(String nombreCompleto) {
         if (nombreCompleto == null) return "";
         String limpio = nombreCompleto.trim();

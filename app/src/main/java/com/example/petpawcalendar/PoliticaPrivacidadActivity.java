@@ -23,7 +23,7 @@ public class PoliticaPrivacidadActivity extends AppCompatActivity {
             return insets;
         });
 
-        // === Botón atrás en la barra superior ===
+        // Botón atrás
         LinearLayout btnAtras = findViewById(R.id.btnAtrasPolitica);
         btnAtras.setOnClickListener(v -> {
             // Cerrar esta Activity y volver a la anterior (Registro)

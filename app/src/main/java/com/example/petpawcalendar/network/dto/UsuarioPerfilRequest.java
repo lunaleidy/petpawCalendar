@@ -20,7 +20,7 @@ public class UsuarioPerfilRequest {
     private String fotoUrl;
 
     @SerializedName("ultimoLogin")
-    private String ultimoLogin; // lo recibes como String ISO
+    private String ultimoLogin;
 
     @SerializedName("aceptoTerminos")
     private Boolean aceptoTerminos;

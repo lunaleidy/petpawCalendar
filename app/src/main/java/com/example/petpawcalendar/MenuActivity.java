@@ -35,7 +35,6 @@ import retrofit2.Response;
 
 public class MenuActivity extends AppCompatActivity {
 
-    // Constantes para tabs
     private static final int TAB_INICIO = 0;
     private static final int TAB_CALENDARIO = 1;
     private static final int TAB_AJUSTES = 2;
@@ -201,7 +200,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private void cargarMascotas() {
 
-        // 1) Leer el token guardado en SharedPreferences
+        // Leer el token guardado en SharedPreferences
         SharedPreferences prefs = getSharedPreferences("auth_prefs", MODE_PRIVATE);
         String token = prefs.getString("jwt_token", null);
 
@@ -215,7 +214,7 @@ public class MenuActivity extends AppCompatActivity {
             return;
         }
 
-        // 2) Llamar a la API enviando "Bearer <token>"
+        // Llamar a la API enviando "Bearer <token>"
         String authHeader = "Bearer " + token;
         Call<ResponseModel<List<MascotaRequest>>> call = apiService.listarMascotas(authHeader);
 
@@ -260,7 +259,6 @@ public class MenuActivity extends AppCompatActivity {
         String token = prefs.getString("jwt_token", null);
 
         if (token == null || token.isEmpty()) {
-            // No hay token => nombre genérico y avatar por defecto
             txtNombreUsuarioMenu.setText(getString(R.string.menu_usuario_nombre));
             return;
         }

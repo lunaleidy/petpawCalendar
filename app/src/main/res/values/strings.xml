@@ -171,7 +171,35 @@
     <string name="ajustes_eliminar_error">No se pudo eliminar la cuenta. Inténtalo de nuevo.</string>
     <string name="ajustes_back_msg">Usa los botones de navegación de la app para salir.</string>
     <string name="cancelar">Cancelar</string>
-
-
+    <string name="nueva_mascota_titulo">Nueva Mascota</string>
+    <string name="nueva_mascota_foto_content">Foto de la mascota</string>
+    <string name="nueva_mascota_btn_cambiar_foto">Cambiar foto</string>
+    <string name="nueva_mascota_btn_borrar_foto">Eliminar foto</string>
+    <string name="nueva_mascota_nombre_label">Nombre</string>
+    <string name="nueva_mascota_nombre_hint">Nombre de la mascota</string>
+    <string name="nueva_mascota_especie_label">Especie</string>
+    <string name="nueva_mascota_especie_hint">Perro, gato, etc.</string>
+    <string name="nueva_mascota_raza_label">Raza</string>
+    <string name="nueva_mascota_raza_hint">Raza de la mascota</string>
+    <string name="nueva_mascota_nacimiento_label">Nacimiento</string>
+    <string name="nueva_mascota_nacimiento_hint">DD/MM/YYYY</string>
+    <string name="nueva_mascota_sexo_label">Sexo</string>
+    <string name="nueva_mascota_sexo_placeholder">Sexo</string>
+    <string name="nueva_mascota_sexo_f">F</string>
+    <string name="nueva_mascota_sexo_m">M</string>
+    <string name="nueva_mascota_sexo_o">Otro</string>
+    <string name="nueva_mascota_edad_label">Edad</string>
+    <string name="nueva_mascota_edad_default">Edad: 0 años</string>
+    <string name="nueva_mascota_edad_formato">Edad: %1$d años</string>
+    <string name="nueva_mascota_peso_label">Peso</string>
+    <string name="nueva_mascota_peso_hint">Peso en kg</string>
+    <string name="nueva_mascota_btn_cancelar">Cancelar</string>
+    <string name="nueva_mascota_btn_guardar">Guardar</string>
+    <string name="nueva_mascota_error_nombre">El nombre de la mascota es obligatorio.</string>
+    <string name="nueva_mascota_error_peso">El peso debe ser un número válido.</string>
+    <string name="nueva_mascota_error_guardar">No se pudo guardar la mascota.</string>
+    <string name="nueva_mascota_error_foto">No se pudo cargar la foto seleccionada.</string>
+    <string name="nueva_mascota_ok">Mascota creada correctamente.</string>
+    <string name="nueva_mascota_back_msg">Usa los botones de Atrás o Cancelar para salir.</string>
 
 </resources>

@@ -10,7 +10,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -33,7 +32,6 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-    // Views
     private EditText edtEmail;
     private EditText edtPassword;
     private Button btnEntrar;
@@ -55,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 1) Referencias a las vistas
+        // Vinculamos los elementos de la interfaz
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnEntrar = findViewById(R.id.btnEntrar);
@@ -64,16 +62,15 @@ public class LoginActivity extends AppCompatActivity {
         txtOlvidarPassword = findViewById(R.id.txtOlvidarPassword);
         imgTogglePassword = findViewById(R.id.imgTogglePassword);
 
-        // 2) Instancia del servicio de API
+        // Instancia del servicio de API
         apiService = ApiClient.getApiService();
 
-        // >>> PREFILL EMAIL SI VIENE DE OTRA PANTALLA <<<
         String emailDesdeReset = getIntent().getStringExtra("email");
         if (emailDesdeReset != null && !emailDesdeReset.isEmpty()) {
             edtEmail.setText(emailDesdeReset);
         }
 
-        // 3) Botón Atrás -> volver a la pantalla anterior (MainActivity)
+        // Botón Atrás
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // 4) Texto "Registrarse" -> ir a RegistroActivity
+        // Texto Registrarse
         txtRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // 5) Texto "¿Olvidaste tu contraseña?"
+        // Texto ¿Olvidaste tu contraseña?
         txtOlvidarPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // 6) Botón Entrar -> intentar login
+        // Botón Entrar
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                     );
                     passwordVisible = false;
 
-                    // (opcional) cambiar icono cuando esté oculto
+                    // cambiar icono cuando esté oculto
                     imgTogglePassword.setImageResource(android.R.drawable.ic_menu_view);
 
                 } else {
@@ -134,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                     );
                     passwordVisible = true;
 
-                    // (opcional) icono diferente cuando se ve la contraseña
+                    // icono diferente cuando se ve la contraseña
                     imgTogglePassword.setImageResource(android.R.drawable.ic_menu_view);
                 }
 
@@ -196,7 +193,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 if (body.getSuccess() == 0) {
-                    // AHORA getData() YA ES String
                     String token = body.getData();
 
                     guardarToken(token);
@@ -241,7 +237,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void irAlMenu() {
         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-        // si no quieres que el usuario vuelva al login con “atrás”:
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

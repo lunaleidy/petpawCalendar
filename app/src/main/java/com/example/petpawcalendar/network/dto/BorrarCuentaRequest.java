@@ -2,7 +2,7 @@ package com.example.petpawcalendar.network.dto;
 
 public class BorrarCuentaRequest {
 
-    private String clave;   // O el nombre exacto que use tu BorrarCuentaDto
+    private String clave;
 
     public BorrarCuentaRequest() {
     }

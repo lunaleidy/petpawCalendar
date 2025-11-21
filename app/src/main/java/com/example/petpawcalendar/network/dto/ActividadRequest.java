@@ -7,12 +7,12 @@ public class ActividadRequest {
     private TipoRef tipo;
     private String titulo;
     private String descripcion;
-    private String fechaInicio;      // "yyyy-MM-dd'T'HH:mm:ss" o null
+    private String fechaInicio;
     private Boolean todoDia;
-    private String repeticion;       // "ninguna" por defecto
-    private Integer repeticionCada;  // null si no se repite
-    private String repeticionHasta;  // null
-    private String fechaDia;         // "yyyy-MM-dd"
+    private String repeticion;
+    private Integer repeticionCada;
+    private String repeticionHasta;
+    private String fechaDia;
 
     public static class MascotaRef {
         private Integer id;

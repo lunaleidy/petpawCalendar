@@ -35,38 +35,59 @@ public interface ApiService {
     @POST("auth/activar/reenviar")
     Call<ResponseModel> reenviarActivacion(@Body ReenviarActivacionRequest body);
 
+    // Endpoint de listar las mascotas del usuario
     @GET("mascotas")
     Call<ResponseModel<List<MascotaRequest>>> listarMascotas(
             @Header("Authorization") String authHeader
     );
 
+    // Endpoint de eliminar mascotas del usuario
     @DELETE("mascotas/{id}")
     Call<ResponseModel<String>> eliminarMascota(
             @Header("Authorization") String authHeader,
             @Path("id") Integer idMascota
     );
 
+    // Endpoint de obtener el perfil del usuario
     @GET("usuarios/perfil")
     Call<ResponseModel<UsuarioPerfilRequest>> obtenerPerfil(
             @Header("Authorization") String authHeader
     );
 
+    // Endpoint de listar los tipos de actividades
     @GET("actividades/tipos")
     Call<ResponseModel<List<TipoActividadRequest>>> listarTiposActividad(
             @Header("Authorization") String authHeader
     );
 
+    // Endpoint de crear una actividad nueva
     @POST("/actividades")
     Call<ResponseModel<ActividadRequest>> crearActividad(
             @Header("Authorization") String authHeader,
             @Body ActividadRequest actividad
     );
 
+    // Endpoint de eliminar la cuenta de usuario
     @HTTP(method = "DELETE", path = "auth/cuenta", hasBody = true)
     Call<ResponseModel<Void>> eliminarCuenta(
             @Header("Authorization") String authHeader,
             @Body BorrarCuentaRequest dto
     );
 
+    // Endoint de crear mascota
+    @POST("/mascotas")
+    Call<ResponseModel<MascotaRequest>> crearMascota(
+            @Header("Authorization") String authHeader,
+            @Body MascotaRequest body
+    );
+
+    // Endpoint de subir foto de mascota
+    @Multipart
+    @PUT("/mascotas/{id}/foto")
+    Call<ResponseModel<String>> subirFotoMascota(
+            @Header("Authorization") String authHeader,
+            @Path("id") int idMascota,
+            @Part MultipartBody.Part file
+    );
 
 }

@@ -23,7 +23,6 @@ public class TerminosActivity extends AppCompatActivity {
             return insets;
         });
 
-        // === Botón atrás en la barra superior ===
         LinearLayout btnAtras = findViewById(R.id.btnAtrasTerminos);
         btnAtras.setOnClickListener(v -> {
             // Simplemente cerrar esta Activity y volver a Registro

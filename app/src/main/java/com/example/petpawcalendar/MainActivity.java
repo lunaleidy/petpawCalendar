@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // ==== Referencias a los botones ====
+        // Vinculamos los elementos de la interfaz
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         btnRegistrarse = findViewById(R.id.btnRegistrarse);
 
-        // ==== Ir a LoginActivity ====
+        //  Ir a LoginActivity
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // ==== Ir a RegistroActivity ====
+        // Ir a RegistroActivity
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

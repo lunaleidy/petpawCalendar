@@ -48,7 +48,7 @@ public class ActivarCuentaActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Referencias
+        // Vinculamos los elementos de la interfaz
         edtEmailActivar = findViewById(R.id.edtEmailActivar);
         edtCodigoActivar = findViewById(R.id.edtCodigoActivar);
         btnActivarCuenta = findViewById(R.id.btnActivarCuenta);

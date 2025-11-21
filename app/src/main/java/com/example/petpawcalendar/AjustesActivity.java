@@ -73,7 +73,7 @@ public class AjustesActivity extends AppCompatActivity {
         // Inicializamos el servicio de API
         apiService = ApiClient.getApiService();
 
-        // Vinculamos vistas de la interfaz
+        // Vinculamos los elementos de la interfaz
         txtNombreUsuarioMenu = findViewById(R.id.txtNombreUsuarioMenu);
         imgAvatarUsuario = findViewById(R.id.imgAvatarUsuario);
         btnNuevaMascota = findViewById(R.id.btnNuevaMascota);

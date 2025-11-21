@@ -66,7 +66,6 @@ public class RegistroActivity extends AppCompatActivity {
             return insets;
         });
 
-        // ==== Referencias ====
         btnAtrasRegistro = findViewById(R.id.btnAtrasRegistro);
         edtNombreUsuario = findViewById(R.id.edtNombreUsuario);
         edtEmailRegistro = findViewById(R.id.edtEmailRegistro);
@@ -81,7 +80,6 @@ public class RegistroActivity extends AppCompatActivity {
 
         apiService = ApiClient.getApiService();
 
-        // ===== BOTÓN ATRÁS =====
         btnAtrasRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,10 +87,8 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
-        // ===== TEXTO DE TÉRMINOS Y POLÍTICA =====
         configurarTextoTerminos();
 
-        // ===== Toggle contraseña principal =====
         imgTogglePasswordRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +97,7 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
-        // ===== Toggle confirmar contraseña =====
+
         imgTogglePasswordConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +106,6 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
-        // ===== "¿Ya tienes cuenta? Iniciar sesión" =====
         txtIrLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +115,6 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
-        // ===== Botón Crear cuenta =====
         btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,9 +123,6 @@ public class RegistroActivity extends AppCompatActivity {
         });
     }
 
-    // -------------------------------------------------------------------
-    // Texto de términos y política con colores y click
-    // -------------------------------------------------------------------
     private void configurarTextoTerminos() {
         String fullText = getString(R.string.registro_terminos_frase);
         SpannableString spannable = new SpannableString(fullText);
@@ -177,9 +168,6 @@ public class RegistroActivity extends AppCompatActivity {
         txtTerminos.setHighlightColor(Color.TRANSPARENT);
     }
 
-    // -------------------------------------------------------------------
-    // Mostrar / ocultar contraseña
-    // -------------------------------------------------------------------
     private void togglePassword(EditText editText) {
         int start = editText.getSelectionStart();
         int end = editText.getSelectionEnd();
@@ -204,9 +192,6 @@ public class RegistroActivity extends AppCompatActivity {
         editText.setSelection(start, end);
     }
 
-    // -------------------------------------------------------------------
-    // Lógica de registro
-    // -------------------------------------------------------------------
     private void intentarRegistro() {
 
         String nombre = edtNombreUsuario.getText().toString().trim();
@@ -280,7 +265,6 @@ public class RegistroActivity extends AppCompatActivity {
             return;
         }
 
-        // === Llamada a la API ===
         btnCrearCuenta.setEnabled(false);
 
         RegistroRequest body = new RegistroRequest(

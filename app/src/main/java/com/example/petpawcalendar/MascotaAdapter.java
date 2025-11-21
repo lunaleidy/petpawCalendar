@@ -55,7 +55,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     public void onBindViewHolder(@NonNull final MascotaViewHolder holder, int position) {
         final MascotaRequest m = lista.get(position);
 
-        // Nombre (sin sexo, como comentaste)
+        // Nombre
         holder.txtNombre.setText(m.getNombre());
 
         holder.txtRaza.setText(m.getRaza());
@@ -75,7 +75,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             holder.txtPeso.setText("- kg");
         }
 
-        // ---- Foto de la mascota ----
         String fotoUrl = normalizarUrl(m.getFotoUrl());
 
         if (fotoUrl == null || fotoUrl.trim().isEmpty()) {

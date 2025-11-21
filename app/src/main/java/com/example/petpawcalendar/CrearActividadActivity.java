@@ -104,7 +104,7 @@ public class CrearActividadActivity extends AppCompatActivity {
         preselectedTipoId = intent.getIntExtra("idTipoActividad", -1);
         preselectedFechaDia = intent.getStringExtra("fechaDia"); // yyyy-MM-dd
 
-        // Referencias UI
+        // Vinculamos los elementos de la interfaz
         btnAtras = findViewById(R.id.btnAtrasCrearActividad);
         spMascota = findViewById(R.id.spMascotaActividad);
         spTipo = findViewById(R.id.spTipoActividad);
@@ -185,7 +185,6 @@ public class CrearActividadActivity extends AppCompatActivity {
                 return position != 0;
             }
 
-            // TEXTO QUE SE VE CUANDO EL SPINNER ESTÁ CERRADO
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 TextView tv = (TextView) super.getView(position, convertView, parent);
@@ -204,7 +203,6 @@ public class CrearActividadActivity extends AppCompatActivity {
         numAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spFrecuenciaNumero.setAdapter(numAdapter);
 
-        // Unidad: placeholder + opciones
         List<String> unidades = new ArrayList<>();
         unidades.add(getString(R.string.crear_act_frecuencia_unidad_placeholder)); // "Unidad"
         unidades.add("minuto");
@@ -267,8 +265,6 @@ public class CrearActividadActivity extends AppCompatActivity {
             horaElegida = true;
         }, hour, minute, true).show();
     }
-
-    // ========= Carga de mascotas y tipos (con placeholder posición 0) =========
 
     private void cargarMascotas() {
         SharedPreferences prefs = getSharedPreferences("auth_prefs", MODE_PRIVATE);
@@ -396,8 +392,6 @@ public class CrearActividadActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    // ==================== GUARDAR ====================
 
     private void guardarActividad() {
         int posMascota = spMascota.getSelectedItemPosition();

@@ -24,5 +24,9 @@ Retrofit, OkHttp, Glide, Lottie, RecyclerView y CardView ya están configuradas.
 En la clase donde se crea Retrofit (por ejemplo `ApiClient`, `RetrofitInstance` o similar):
 
 ```java
-private static final String BASE_URL = "http://10.0.2.2:8080/"; // para emulador Android
+private static final String BASE_URL = "[http://10.0.2.2:8080/](http://10.0.2.2:8080/)"; // para emulador Android
 // Si se usa dispositivo físico, sustituir por la IP del PC
+```
+
+## 📺 Demostración de la aplicación
+https://youtu.be/6HHadcy1LfA
